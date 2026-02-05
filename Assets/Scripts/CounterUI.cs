@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class CounterUI : MonoBehaviour
 {
-    [SerializeField] private CounterController _controller;
+    [SerializeField] private Counter _controller;
     [SerializeField] private TextMeshProUGUI _counterTMP;
 
     private void OnEnable()
     {
-        _controller.CounterChanged += UpdateTimer;
+        _controller.ValueChanged += UpdateTimer;
     }
 
     private void OnDisable()
     {
-        _controller.CounterChanged -= UpdateTimer;
+        _controller.ValueChanged -= UpdateTimer;
     }
 
     private void UpdateTimer(int value)
